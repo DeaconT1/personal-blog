@@ -2,13 +2,17 @@ import { UserPlugins } from 'vuepress/config'
 
 export default <UserPlugins>[
 
-    ['vuepress-plugin-reading-time'],
 
     [
         {
             name: 'custom-plugins',
-            globalUIComponents: ["PageInfo"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
-        }
+            globalUIComponents: ["PageInfo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+        },
+
+        {
+            name: 'custom-plugins',
+            globalUIComponents: ["GlobalTip"]
+        },
     ],
     // 复制代码块的插件
     ['vuepress-plugin-code-copy', true],
@@ -34,21 +38,6 @@ export default <UserPlugins>[
         recoverTime: 2000,
     }],
 
-
-    // 时间提示插件
-    {
-        name: 'custom-plugins',
-        globalUIComponents: ["GlobalTip"]
-    },
-
-
-    [
-        'vuepress-plugin-baidu-tongji-analytics',
-        {
-            // 将从百度统计后台获取的 hm ID 填入
-            hm: 'XXXXXXXXXX'
-        }
-    ],
 
     [
         'vuepress-plugin-helper-live2d', {
