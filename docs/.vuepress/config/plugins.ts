@@ -2,13 +2,14 @@ import { UserPlugins } from 'vuepress/config'
 
 export default <UserPlugins>[
 
+    ['vuepress-plugin-reading-time'],
+
     [
         {
             name: 'custom-plugins',
             globalUIComponents: ["PageInfo"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
         }
     ],
-
     // 复制代码块的插件
     ['vuepress-plugin-code-copy', true],
 
