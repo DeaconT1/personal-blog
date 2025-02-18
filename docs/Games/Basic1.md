@@ -12,11 +12,4 @@ tags:
 
 123
 Abc
-
-<script>
-export default {
-    mounted () {
-      this.$page.lastUpdated = "2025/2/18 00:09:09";
-    }
-  }
-</script>
+tht123123
