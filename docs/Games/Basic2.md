@@ -2,10 +2,12 @@
 title: Basic2
 date: 2025-02-17 19:09:35
 permalink: /pages/6d2622/
+description: '页面的描述'
+author: Deacon
 categories:
   - Games
 tags:
-  - 
+  - abc
 ---
 
 ## 更新时间测试

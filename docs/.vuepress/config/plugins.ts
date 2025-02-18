@@ -9,10 +9,6 @@ export default <UserPlugins>[
             globalUIComponents: ["PageInfo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
         },
 
-        {
-            name: 'custom-plugins',
-            globalUIComponents: ["GlobalTip"]
-        },
     ],
     // 复制代码块的插件
     ['vuepress-plugin-code-copy', true],
