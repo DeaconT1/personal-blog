@@ -20,9 +20,9 @@ export default <UserPlugins>[
             choosen: 'valine',
             options: {
                 el: '#valine-vuepress-comment',
-                appId:  'HmVYvjBRbhg3BtoUqm0hJUsy-MdYXbMMI',
-                appKey: 'MoU1OAdtf9nQjnBOvLQSGBi4',
-                placeholder: '请留下你的足迹 ~~',
+                appId:  'p3oP61LpH40Tyg6sR64EGBQi-gzGzoHsz',
+                appKey: 'd1gyPBw0DehvHv8y1EWN26HX',
+                placeholder: 'You can leave your message here!',
                 // 有 URL、''、mp、identicon、monsterid、wavatar、retro、robohash、hide 头像选择，具体头像是什么样子，请访问 https://valine.js.org/avatar.html
                 avatar: 'identicon',	// 默认头像
                 pageSize: 10,   // 评论列表分页，每页条数
