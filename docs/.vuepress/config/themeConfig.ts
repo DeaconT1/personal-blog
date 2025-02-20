@@ -1,7 +1,10 @@
 import { VdoingThemeConfig } from "vuepress-theme-vdoing/types";
+import nav from '../common/nav';
 import { readFileList, readTotalFileWords, readEachFileWords } from '../webSiteInfo/readFile';
 
 export default <VdoingThemeConfig>{
+    nav,
+    sidebar: "structuring",
     logo: 'https://s3.bmp.ovh/imgs/2025/02/17/90894ee9bae75aac.jpg',
 
     indexImg: {
@@ -38,51 +41,6 @@ export default <VdoingThemeConfig>{
         bodyBgImgInterval: 25,
 
 
-    nav: [
-        { text: '首页', link: '/' },
-        {
-            text: 'Game Related', link: '/Games/', items: [
-                {text: 'Steam Games', link: '/Games/Basic1/'},
-                {text: 'Other Games', link: '/Games/Basic2/'},
-            ]
-        },
-
-        {
-            text: 'Java', link: '/Java/', items: [
-                { text: 'JavaSE', link: '/Java/JavaSE/' },
-                { text: 'JavaEE', link: '/Java/JavaEE/' }
-            ]
-        },
-    ],
-
-    sidebar: {
-        '/Games/': [
-            {
-                title: 'Games',
-                path: '/Games/',
-                collapsable: false, // 不折叠
-                sidebarDepth: 2,
-                children: [
-                    '/Games/Basic1',
-                    '/Games/Basic2',
-                ],
-            },
-        ],
-
-
-        '/Java/': [
-            {
-                title: 'Java',
-                path: '/Java/',
-                collapsable: false,
-                sidebarDepth: 2,
-                children: [
-                    '/Java/JavaSE',
-                    '/Java/JavaEE',
-                ],
-            },
-        ],
-    },
 
     rightMenuBar: false,
     // user login front page style
@@ -143,11 +101,50 @@ export default <VdoingThemeConfig>{
 
     },
 
+    author: {
+        // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, link: String}
+        name: "Deacon"
+    },
+
+
+// sidebar: {
+//     '/Entertainment/Games/': [
+//         {
+//             title: 'Games',
+//             path: '/Entertainment/Games/',
+//             collapsable: false, // 不折叠
+//             sidebarDepth: 2
+//         },
+//         {
+//             // BlackMyth-Wukong 分组
+//             title: 'BlackMyth-Wukong',
+//             collapsable: false,
+//             // 如果希望点击标题就能进入子目录 README.md，可以加 path
+//             path: '/Entertainment/Games/BlackMyth-Wukong/',
+//             children: [
+//                 '/Entertainment/Games/BlackMyth-Wukong/存档.md',
+//             ]
+//         },
+//         {
+//             // GTAV 分组
+//             title: 'GTAV(online)',
+//             collapsable: false,
+//             // 如果希望点击标题就能进入子目录 README.md，可以加 path
+//             path: '/Entertainment/Games/GTAV(online)/',
+//             children: [
+//                 '/Entertainment/Games/GTAV(online)/新手教程.md',
+//                 '/Entertainment/Games/GTAV(online)/任务介绍.md'
+//             ]
+//         },
+//
+//     ]},
+
+
     lastUpdated: 'last updated',
 
     footer: {
     createYear: 2024,
         copyrightInfo: 'Deacon | All rights reserved.'
-}
+    }
 
 }
