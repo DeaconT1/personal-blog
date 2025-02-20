@@ -15,6 +15,7 @@ export default <UserPlugins>[
 
     ['fulltext-search'],
 
+
     [
         'vuepress-plugin-comment',
         {

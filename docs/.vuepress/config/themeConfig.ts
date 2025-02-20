@@ -41,10 +41,8 @@ export default <VdoingThemeConfig>{
         bodyBgImgInterval: 25,
 
 
-
-    rightMenuBar: false,
     // user login front page style
-    defaultMode: 'dark',
+    // defaultMode: 'dark',
 
     blogger: {
         avatar: 'https://s3.bmp.ovh/imgs/2025/02/17/90894ee9bae75aac.jpg',   // 头像(必需)，建议放在 .vuepress/public 下
