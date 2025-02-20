@@ -13,6 +13,8 @@ export default <UserPlugins>[
     // 复制代码块的插件
     ['vuepress-plugin-code-copy', true],
 
+    ['fulltext-search'],
+
     [
         'vuepress-plugin-comment',
         {
