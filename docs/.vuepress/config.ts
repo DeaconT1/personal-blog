@@ -7,5 +7,5 @@ module.exports = {
     head,
     themeConfig,
     plugins,
-    base: "project",
+    base: "/project/",
 }
