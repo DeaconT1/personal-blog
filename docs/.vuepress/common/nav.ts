@@ -1,4 +1,5 @@
 import enterNav from "../nav/enterNav";
+import studyNav from "../nav/studyNav";
 
 export default [
     {
@@ -6,4 +7,5 @@ export default [
     },
 
     enterNav,
+    studyNav,
 ]

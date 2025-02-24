@@ -105,39 +105,6 @@ export default <VdoingThemeConfig>{
     },
 
 
-// sidebar: {
-//     '/Entertainment/Games/': [
-//         {
-//             title: 'Games',
-//             path: '/Entertainment/Games/',
-//             collapsable: false, // 不折叠
-//             sidebarDepth: 2
-//         },
-//         {
-//             // BlackMyth-Wukong 分组
-//             title: 'BlackMyth-Wukong',
-//             collapsable: false,
-//             // 如果希望点击标题就能进入子目录 README.md，可以加 path
-//             path: '/Entertainment/Games/BlackMyth-Wukong/',
-//             children: [
-//                 '/Entertainment/Games/BlackMyth-Wukong/存档.md',
-//             ]
-//         },
-//         {
-//             // GTAV 分组
-//             title: 'GTAV(online)',
-//             collapsable: false,
-//             // 如果希望点击标题就能进入子目录 README.md，可以加 path
-//             path: '/Entertainment/Games/GTAV(online)/',
-//             children: [
-//                 '/Entertainment/Games/GTAV(online)/新手教程.md',
-//                 '/Entertainment/Games/GTAV(online)/任务介绍.md'
-//             ]
-//         },
-//
-//     ]},
-
-
     lastUpdated: 'last updated',
 
     footer: {
