@@ -40,6 +40,8 @@ export default <VdoingThemeConfig>{
         bodyBgImgOpacity: 1.0,
         bodyBgImgInterval: 25,
 
+    searchPlaceholder: "Press 𝑺 to search",
+
 
     // user login front page style
     // defaultMode: 'dark',
