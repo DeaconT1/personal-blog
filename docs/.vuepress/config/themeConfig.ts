@@ -28,14 +28,14 @@ export default <VdoingThemeConfig>{
 
 
     bodyBgImg: [
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner0.png',
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner1.png',
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner2.png',
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner3.png',
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner4.png',
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner5.png',
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner6.png',
-        'https://pub-8cf8d7d48687472eb75251fc9e3b5a60.r2.dev/banner7.png',
+        'https://atridea.com/banner0.png',
+        'https://atridea.com/banner1.png',
+        'https://atridea.com/banner2.png',
+        'https://atridea.com/banner3.png',
+        'https://atridea.com/banner4.png',
+        'https://atridea.com/banner5.png',
+        'https://atridea.com/banner6.png',
+        'https://atridea.com/banner7.png',
         ],
         bodyBgImgOpacity: 1.0,
         bodyBgImgInterval: 25,
