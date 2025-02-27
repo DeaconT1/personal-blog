@@ -73,29 +73,24 @@ export default <VdoingThemeConfig>{
             {
                 iconClass: 'icon-github',
                 title: 'GitHub',
-                link: 'https://github.com/YourName'
-            },
-            {
-                iconClass: 'icon-weixin',
-                title: 'Wechat',
-                link: 'http://weixin.qq.com/'
+                link: 'https://github.com/DeaconT1'
             },
             {
                 iconClass: 'icon-QQ',
                 title: 'QQ',
-                link: 'tencent://message/?uin=XXXXXX'
+                link: 'https://tool.gljlw.com/qq/?qq=3119415717'
             },
             {
 
                 iconClass: 'icon-youjian',
                 title: 'Email Me',
-                link: 'mailto:example@gmail.com'
+                link: 'mailto:deacont1study@gmail.com'
             },
 
             {
                 iconClass: 'icon-bilibili',
                 title: 'Bilibili',
-                link: 'https://space.bilibili.com'
+                link: 'https://space.bilibili.com/589152671'
             }
         ]
 
