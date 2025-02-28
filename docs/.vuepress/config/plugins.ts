@@ -6,7 +6,7 @@ export default <UserPlugins>[
     [
         {
             name: 'custom-plugins',
-            globalUIComponents: ["PageInfo"],// 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+            globalUIComponents: ["PageInfo", "Twikoo"], // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
         },
 
     ],
@@ -62,12 +62,12 @@ export default <UserPlugins>[
     //     }
     // ],
 
-    [
-        {
-            name: 'custom-plugins',
-            globalUIComponents: ["Twikoo"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
-        }
-    ],
+    // [
+    //     {
+    //         name: 'custom-plugins',
+    //         globalUIComponents: ["Twikoo"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+    //     }
+    // ],
 
     // 阅读进度
     'reading-progress',
