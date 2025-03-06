@@ -52,6 +52,11 @@ export default ({ router, Vue }) => {
                 if (tags) {
                     tags.textContent = 'Tags';
                 }
+
+                const more = document.querySelector('.more');
+                if (more) {
+                    more.textContent = 'More articles';
+                }
             });
         });
     }
