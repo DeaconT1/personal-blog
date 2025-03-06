@@ -69,17 +69,17 @@ export function timeDiff(startDate, endDate) {
     if (diffValue == 0) {
         return '刚刚';
     } else if (diffValue < 60) {
-        return diffValue + ' 秒';
+        return diffValue + ' secs';
     } else if (parseInt(diffValue / 60) < 60) {
-        return parseInt(diffValue / 60) + ' 分';
+        return parseInt(diffValue / 60) + ' minutes';
     } else if (parseInt(diffValue / (60 * 60)) < 24) {
-        return parseInt(diffValue / (60 * 60)) + ' 时';
+        return parseInt(diffValue / (60 * 60)) + ' hours';
     } else if (parseInt(diffValue / (60 * 60 * 24)) < getDays(startDate.getMonth, startDate.getFullYear)) {
-        return parseInt(diffValue / (60 * 60 * 24)) + ' 天';
+        return parseInt(diffValue / (60 * 60 * 24)) + ' days';
     } else if (parseInt(diffValue / (60 * 60 * 24 * getDays(startDate.getMonth, startDate.getFullYear))) < 12) {
-        return parseInt(diffValue / (60 * 60 * 24 * getDays(startDate.getMonth, startDate.getFullYear))) + ' 月';
+        return parseInt(diffValue / (60 * 60 * 24 * getDays(startDate.getMonth, startDate.getFullYear))) + ' months';
     } else {
-        return parseInt(diffValue / (60 * 60 * 24 * getDays(startDate.getMonth, startDate.getFullYear) * 12)) + ' 年';
+        return parseInt(diffValue / (60 * 60 * 24 * getDays(startDate.getMonth, startDate.getFullYear) * 12)) + ' years';
     }
 }
 

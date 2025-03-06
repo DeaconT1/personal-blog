@@ -5,6 +5,7 @@ import { readFileList, readTotalFileWords, readEachFileWords } from '../webSiteI
 export default <VdoingThemeConfig>{
     nav,
     sidebar: "structuring",
+    catalogTitle: 'Content',
     logo: 'https://s3.bmp.ovh/imgs/2025/02/17/90894ee9bae75aac.jpg',
 
     indexImg: {

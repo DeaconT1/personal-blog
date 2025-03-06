@@ -3,7 +3,7 @@ import studyNav from "../nav/studyNav";
 
 export default [
     {
-        text: '首页', link: '/'
+        text: 'Front Page', link: '/'
     },
 
     enterNav,

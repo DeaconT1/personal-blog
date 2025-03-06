@@ -6,49 +6,39 @@
           class="iconfont icon-award"
           style="font-size: 0.875rem; font-weight: 900; width: 1.25em"
       ></i>
-      <span>站点信息</span>
+      <span>Site Info</span>
     </div>
     <div class="webinfo-item">
-      <div class="webinfo-item-title">文章数目：</div>
-      <div class="webinfo-content">{{ mdFileCount }} 篇</div>
+      <div class="webinfo-item-title">Num of Articles：</div>
+      <div class="webinfo-content">{{ mdFileCount }} posts</div>
     </div>
 
     <div class="webinfo-item">
-      <div class="webinfo-item-title">已运行时间：</div>
+      <div class="webinfo-item-title">Running time：</div>
       <div class="webinfo-content">
-        {{ createToNowDay != 0 ? createToNowDay + " 天" : "不到一天" }}
+        {{ createToNowDay != 0 ? createToNowDay + " days" : "不到一天" }}
       </div>
     </div>
 
     <div class="webinfo-item">
-      <div class="webinfo-item-title">本站总字数：</div>
-      <div class="webinfo-content">{{ totalWords }} 字</div>
+      <div class="webinfo-item-title">Word Count：</div>
+      <div class="webinfo-content">{{ totalWords }} words</div>
     </div>
 
     <div class="webinfo-item">
-      <div class="webinfo-item-title">最后活动时间：</div>
+      <div class="webinfo-item-title">Last Update：</div>
       <div class="webinfo-content">
-        {{ lastActiveDate == "刚刚" ? "刚刚" : lastActiveDate + "前" }}
+        {{ lastActiveDate == "刚刚" ? "刚刚" : lastActiveDate + "" }}
       </div>
     </div>
 
     <div v-if="indexView" class="webinfo-item">
-      <div class="webinfo-item-title">本站被访问了：</div>
+      <div class="webinfo-item-title">Visits：</div>
       <div class="webinfo-content">
         <span id="busuanzi_value_site_pv" class="web-site-pv"
         ><i title="正在获取..." class="loading iconfont icon-loading"></i>
         </span>
-        次
-      </div>
-    </div>
-
-    <div v-if="indexView" class="webinfo-item">
-      <div class="webinfo-item-title">您的访问排名：</div>
-      <div class="webinfo-content busuanzi">
-        <span id="busuanzi_value_site_uv" class="web-site-uv"
-        ><i title="正在获取..." class="loading iconfont icon-loading"></i>
-        </span>
-        名
+        times
       </div>
     </div>
   </div>
