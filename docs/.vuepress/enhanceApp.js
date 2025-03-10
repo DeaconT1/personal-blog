@@ -1,10 +1,12 @@
 // .vuepress/enhanceApp.js
 export default ({ router, Vue }) => {
     if (typeof window !== 'undefined') {
-        // 在路由切换后执行
-        router.afterEach(() => {
+
+        // 封装文本替换逻辑到一个函数 replaceText
+        function replaceText() {
             Vue.nextTick(() => {
-                // 假设渲染出来的 HTML 中包含 <div class="sidebar-title">目录</div>
+
+                // 假设渲染出来的 HTML 中包含 <div class="catalogue-title">目录</div>
                 const el = document.querySelector('.catalogue-title');
                 if (el && el.textContent.includes('目录')) {
                     el.textContent = 'Content';
@@ -15,49 +17,39 @@ export default ({ router, Vue }) => {
                     el1.textContent = 'Content';
                 }
 
-                const elZidong = document.querySelector('.iconfont.icon-zidong');
-                if (elZidong) {
-                    elZidong.textContent = 'Follow system';
-                }
-
-                // 浅色模式 -> Light mode
-                const elLight = document.querySelector('.iconfont.icon-rijianmoshi');
-                if (elLight) {
-                    elLight.textContent = 'Light mode';
-                }
-
-                // 深色模式 -> Dark mode
-                const elDark = document.querySelector('.iconfont.icon-yejianmoshi');
-                if (elDark) {
-                    elDark.textContent = 'Dark mode';
-                }
-
-                // 阅读模式 -> Reading mode
-                const elRead = document.querySelector('.iconfont.icon-yuedu');
-                if (elRead) {
-                    elRead.textContent = 'Reading mode';
-                }
-
                 const updated = document.querySelector('.iconfont.icon-bi');
                 if (updated) {
                     updated.textContent = 'Recently Updated';
-                }
-
-                const cate = document.querySelector('.title.iconfont.icon-wenjianjia');
-                if (cate) {
-                    cate.textContent = 'Categories';
-                }
-
-                const tags = document.querySelector('.title.iconfont.icon-biaoqian1');
-                if (tags) {
-                    tags.textContent = 'Tags';
                 }
 
                 const more = document.querySelector('.more');
                 if (more) {
                     more.textContent = 'More articles';
                 }
+
+                const note = document.querySelector('.custom-block.note .custom-block-title');
+                if (note) {
+                    note.textContent = 'Note';
+                }
+
+                const tip = document.querySelector('.custom-block.tip .custom-block-title');
+                if (tip) {
+                    tip.textContent = 'Tips';
+                }
+
+                const allCate = document.querySelector('.title.iconfont.icon-wenjianjia.router-link-exact-active.router-link-active');
+                if (allCate) {
+                    allCate.textContent = 'All Categories';
+                }
             });
+        }
+
+        // 首次进入页面时也执行一次
+        replaceText();
+
+        // 每次完成路由切换后再执行一次
+        router.afterEach(() => {
+            replaceText();
         });
     }
 };
