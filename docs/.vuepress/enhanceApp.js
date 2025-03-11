@@ -32,20 +32,22 @@ export default ({ router, Vue }) => {
                         more.textContent = 'More articles';
                     }
 
-                    const note = document.querySelector('.custom-block.note .custom-block-title');
-                    if (note) {
-                        note.textContent = 'Note';
-                    }
-
-                    const tip = document.querySelector('.custom-block.tip .custom-block-title');
-                    if (tip) {
-                        tip.textContent = 'Tips';
-                    }
-
                     const allCate = document.querySelector('.title.iconfont.icon-wenjianjia.router-link-exact-active.router-link-active');
                     if (allCate) {
                         allCate.textContent = 'All Categories';
                     }
+
+                    const foreMoreEls = document.querySelectorAll('.readmore.iconfont.icon-jiantou-you');
+
+                    foreMoreEls.forEach(el => {
+                        // el 就是单独的那个 DOM 节点
+                        // 这里可以先输出看看实际的 textContent 是不是你预期的
+                        console.log(el.textContent);
+
+                        if (el.textContent.includes('阅读全文')) {
+                            el.textContent = 'Read More';
+                        }
+                    });
                 }, 100); // 延时 100ms 可以酌情调节
             });
         }
