@@ -108,6 +108,29 @@ export default <VdoingThemeConfig>{
     footer: {
     createYear: 2024,
         copyrightInfo: 'Deacon | All rights reserved.'
-    }
+    },
+
+    // 私密文章配置
+    privatePage: {
+        openPrivate: true, // 开启私密文章验证，默认开启（true），如果不开启（false），则下面配置都失效
+        username: "deacon", // 管理员用户名
+        password: "Cetc1028", // 管理员密码
+        expire: "1d", // 登录过期时间：1d 代表 1 天，1h 代表 1 小时，仅支持这两个单位，不加单位代表秒。过期后访问私密文章重新输入用户名和密码。默认一天
+        loginPath: "/vdoing/login/", // 引用登录组件的 md 文章的 permalink（必须），无默认值
+        loginKey: "vdoing_manager", // 存储用户名信息的 key，默认是 vdoing_manager。系统通过该 key 验证是否登录、是否过期
+        loginSession: false, // 开启是否在网页关闭或刷新后，清除登录状态，这样再次访问网页，需要重新登录，默认为 false（不开启）
+        firstLogin: 0, // 第一次进入网站需要验证。用于封锁整个网站，默认为 0（不开启），1 和 2 都代表开启，区别：1 代表虽然进入网站成功，但是网站内的私密文章仍需要单独验证，2 代表进入网站成功，网站内的私密文章不需要单独验证，也就是网站内的私密文章和普通文章一样可以访问
+        firstLoginKey: "vdoing_first_login", // 存储用户名信息的 key，firstLogin 开启后该配置生效，默认为 vdoing_first_login，系统通过该 key 验证是否登录、是否过期
+        // 私密文章多组用户名密码
+        // loginInfo: {
+        //   "/private/test1/": [
+        //     { username: "vdoing", password: "123456" },
+        //   ],
+        //   "vdoing_first_login" :[  // 对应 firstLoginKey 的值
+        //     { username: "vdoing", password: "123456" },
+        //   ]
+        // }
+    },
+
 
 }
