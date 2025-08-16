@@ -56,7 +56,7 @@ export default ({
                         if (new Date() - globalInfo.time > globalInfo.expire) {
                             localStorage.removeItem(loginKey);
                         } else {
-                            throw new Error("管理员验证成功！");
+                            throw new Error("Success!");
                         }
                     }
 
@@ -231,12 +231,25 @@ export default ({
                         more.textContent = "More articles";
                     }
 
-                    const allCate = document.querySelector(
-                        ".title.iconfont.icon-wenjianjia.router-link-exact-active.router-link-active"
-                    );
+                    const allCate = document.querySelector(".title.iconfont.icon-wenjianjia.router-link-exact-active.router-link-active");
                     if (allCate) {
-                        allCate.textContent = "All Categories";
+                        allCate.setAttribute("title", "All Categories");
                     }
+
+                    const modeItems = document.querySelectorAll('.select-box li');
+
+                    // 依次替换成英文
+                    const translations = [
+                        'Follow System', // 跟随系统
+                        'Light Mode',    // 浅色模式
+                        'Dark Mode',     // 深色模式
+                        'Reading Mode'   // 阅读模式
+                    ];
+
+                    // 遍历替换
+                    modeItems.forEach((li, index) => {
+                        li.textContent = translations[index];
+                    });
 
                     const foreMoreEls = document.querySelectorAll(
                         ".readmore.iconfont.icon-jiantou-you"

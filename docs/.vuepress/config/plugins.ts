@@ -6,7 +6,7 @@ export default <UserPlugins>[
     [
         {
             name: 'custom-plugins',
-            globalUIComponents: ["PageInfo", "Twikoo"], // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
+            globalUIComponents: ["PageInfo", "Twikoo", "GlobalTip"], // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
         },
 
     ],
