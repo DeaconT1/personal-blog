@@ -29,14 +29,14 @@ export default <VdoingThemeConfig>{
 
 
     bodyBgImg: [
-        "https://image.atridea.com/banner0.png",
-        "https://image.atridea.com/banner1.png",
-        "https://image.atridea.com/banner2.png",
-        "https://image.atridea.com/banner3.png",
-        "https://image.atridea.com/banner4.png",
-        "https://image.atridea.com/banner5.png",
-        "https://image.atridea.com/banner6.png",
-        "https://image.atridea.com/banner7.png",
+        "https://image.atridea.com/banner0.webp",
+        "https://image.atridea.com/banner1.webp",
+        "https://image.atridea.com/banner2.webp",
+        "https://image.atridea.com/banner3.webp",
+        "https://image.atridea.com/banner4.webp",
+        "https://image.atridea.com/banner5.webp",
+        "https://image.atridea.com/banner6.webp",
+        "https://image.atridea.com/banner7.webp",
         ],
         bodyBgImgOpacity: 1.0,
         bodyBgImgInterval: 25,
