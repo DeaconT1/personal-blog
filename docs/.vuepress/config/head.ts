@@ -7,7 +7,6 @@ export default <HeadTags> [
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     ['script', { src: 'https://cdn.staticfile.org/twikoo/1.6.41/twikoo.all.min.js' }],
     ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3129839_xft6cqs5gc.css' }],
-    ['noscript', {}, '<meta http-equiv="refresh" content="0; url=https://www.youngkbt.cn/noscript/"><style>.theme-vdoing-content { display:none }'],
 
 
 ]
