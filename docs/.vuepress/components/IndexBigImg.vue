@@ -204,7 +204,7 @@ export default {
       if (hours >= 6 && hours < 11) {
         div.style.backgroundColor = this.bgTimeColorArray[0];
         addTip(
-            `早上好呀~~，现在是 ${hours}:${minutes}:${seconds}，吃早餐了吗？😊🤭`,
+            `Good morning~~ It’s now ${hours}:${minutes}:${seconds}, have you had breakfast yet? 😊🤭`,
             "info",
             50,
             4000
@@ -212,7 +212,7 @@ export default {
       } else if (hours >= 12 && hours <= 16) {
         div.style.backgroundColor = this.bgTimeColorArray[0];
         addTip(
-            `下午好呀~~，现在是 ${hours}:${minutes}:${seconds}，繁忙的下午也要适当休息哦🥤🏀~~`,
+            `Good afternoon~~ It’s now ${hours}:${minutes}:${seconds}. Remember to take a proper break during this busy afternoon 🥤🏀~~`,
             "info",
             50,
             4000
@@ -220,7 +220,7 @@ export default {
       } else if (hours >= 16 && hours <= 19) {
         div.style.backgroundColor = this.bgTimeColorArray[1];
         addTip(
-            `到黄昏了~~，现在是 ${hours}:${minutes}:${seconds}，该准备吃饭啦🥗🍖~~`,
+            `It’s already dusk~~ The time is now ${hours}:${minutes}:${seconds}, time to get ready for dinner 🥗🍖~~`,
             "info",
             50,
             4000
@@ -228,7 +228,7 @@ export default {
       } else if (hours >= 19 && hours < 24) {
         div.style.backgroundColor = this.bgTimeColorArray[2];
         addTip(
-            `晚上好呀~~，现在是 ${hours}:${minutes}:${seconds}，该准备洗漱睡觉啦🥱😪~~`,
+            `Good evening~~ It’s now ${hours}:${minutes}:${seconds}, time to get ready to wash up and go to bed 🥱😪~~`,
             "info",
             50,
             4000
@@ -236,7 +236,7 @@ export default {
       } else if (hours >= 0 && hours < 6) {
         div.style.backgroundColor = this.bgTimeColorArray[3];
         addTip(
-            `别再熬夜了~~，现在是 ${hours}:${minutes}:${seconds}，早点睡吧，让我们一起欣赏早上的太阳~~😇🛏`,
+            `Stop staying up late~~ It’s now ${hours}:${minutes}:${seconds}, go to bed early and let’s enjoy the morning sun together~~ 😇🛏`,
             "info",
             50,
             4000

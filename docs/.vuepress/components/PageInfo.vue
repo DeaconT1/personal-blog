@@ -97,17 +97,17 @@ export default {
       let pageView = document.querySelector(".page-view");
       if (pageView) {
         pageView.innerHTML =
-            '<a style="color: #888; margin-left: 3px" href="javascript:;" id="busuanzi_value_page_pv" class="view-data"><i title="正在获取..." class="loading iconfont icon-loading"></i></a>';
+            '<a style="color: #888; margin-left: 3px" href="javascript:;" id="busuanzi_value_page_pv" class="view-data"><i title="Loading..." class="loading iconfont icon-loading"></i></a>';
       } else {
         // 创建访问量的元素
         let template = document.createElement("div");
-        template.title = "浏览量";
+        template.title = "Views";
         template.className = "page-view iconfont icon-view";
         template.style.float = "left";
         template.style.marginLeft = "20px";
         template.style.fontSize = "0.8rem";
         template.innerHTML =
-            '<a style="color: #888; margin-left: 3px" href="javascript:;" id="busuanzi_value_page_pv" class="view-data"><i title="正在获取..." class="loading iconfont icon-loading"></i></a>';
+            '<a style="color: #888; margin-left: 3px" href="javascript:;" id="busuanzi_value_page_pv" class="view-data"><i title="Loading..." class="loading iconfont icon-loading"></i></a>';
         // 添加 loading 效果
         let style = document.createElement("style");
         style.innerHTML = `@keyframes turn {
@@ -136,7 +136,7 @@ export default {
         words.innerHTML = `<a href="javascript:;" style="margin-left: 3px; color: #888">${wordsCount}</a>`;
       } else {
         let template = document.createElement("div");
-        template.title = "文章字数";
+        template.title = "Word count";
         template.className = "book-words iconfont icon-book";
         template.style.float = "left";
         template.style.marginLeft = "20px";
@@ -155,7 +155,7 @@ export default {
         reading.innerHTML = `<a href="javascript:;" style="margin-left: 3px; color: #888">${readTimeCount}</a>`;
       } else {
         let template = document.createElement("div");
-        template.title = "预阅读时长";
+        template.title = "Reading time";
         template.className = "reading-time iconfont icon-shijian";
         template.style.float = "left";
         template.style.marginLeft = "20px";

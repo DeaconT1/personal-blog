@@ -67,7 +67,7 @@ export function timeDiff(startDate, endDate) {
     // 计算时间戳的差
     const diffValue = parseInt((Math.abs(endDate - startDate) / 1000));
     if (diffValue == 0) {
-        return '刚刚';
+        return 'just now';
     } else if (diffValue < 60) {
         return diffValue + ' secs';
     } else if (parseInt(diffValue / 60) < 60) {

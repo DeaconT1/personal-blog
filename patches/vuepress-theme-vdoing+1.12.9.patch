@@ -1,0 +1,399 @@
+diff --git a/node_modules/vuepress-theme-vdoing/components/ArchivesPage.vue b/node_modules/vuepress-theme-vdoing/components/ArchivesPage.vue
+index 9ee64be..1619ebf 100644
+--- a/node_modules/vuepress-theme-vdoing/components/ArchivesPage.vue
++++ b/node_modules/vuepress-theme-vdoing/components/ArchivesPage.vue
+@@ -9,7 +9,7 @@
+         {{ $page.title }}
+       </h1>
+       <div class="count">
+-        总共 <i>{{ $sortPostsByDate.length }}</i> 篇文章
++        Total <i>{{ $sortPostsByDate.length }}</i> posts
+       </div>
+       <ul>
+         <template v-for="(item, index) in postsList">
+@@ -21,7 +21,7 @@
+             <h2>
+               {{ year }}
+               <span>
+-                <i>{{ countByYear[year] }}</i> 篇
++                <i>{{ countByYear[year] }}</i> posts
+               </span>
+             </h2>
+           </li>
+diff --git a/node_modules/vuepress-theme-vdoing/components/ArticleInfo.vue b/node_modules/vuepress-theme-vdoing/components/ArticleInfo.vue
+index a7a2a07..f399081 100644
+--- a/node_modules/vuepress-theme-vdoing/components/ArticleInfo.vue
++++ b/node_modules/vuepress-theme-vdoing/components/ArticleInfo.vue
+@@ -4,7 +4,7 @@
+       <!-- 面包屑 -->
+       <ul class="breadcrumbs" v-if="classify1 && classify1 !== '_posts'">
+         <li>
+-          <router-link to="/" class="iconfont icon-home" title="首页" />
++          <router-link to="/" class="iconfont icon-home" title="Home" />
+         </li>
+ 
+         <li v-for="item in classifyList" :key="item">
+@@ -16,7 +16,7 @@
+           <router-link
+             v-else-if="$themeConfig.category !== false"
+             :to="`/categories/?category=${encodeURIComponent(item)}`"
+-            title="分类"
++            title="Category"
+             >{{ item }}</router-link
+           >
+           <!-- 没有跳转 -->
+@@ -26,7 +26,7 @@
+ 
+       <!-- 作者&日期 -->
+       <div class="info">
+-        <div class="author iconfont icon-touxiang" title="作者" v-if="author">
++        <div class="author iconfont icon-touxiang" title="Author" v-if="author">
+           <a
+             :href="author.href || author.link"
+             v-if="
+@@ -34,17 +34,17 @@
+             "
+             target="_blank"
+             class="beLink"
+-            title="作者"
++            title="Author"
+             >{{ author.name }}</a
+           >
+           <a v-else href="javascript:;">{{ author.name || author }}</a>
+         </div>
+-        <div class="date iconfont icon-riqi" title="创建时间" v-if="date">
++        <div class="date iconfont icon-riqi" title="Created" v-if="date">
+           <a href="javascript:;">{{ date }}</a>
+         </div>
+         <div
+           class="date iconfont icon-wenjian"
+-          title="分类"
++          title="Category"
+           v-if="
+             $themeConfig.category !== false &&
+             !(classify1 && classify1 !== '_posts') &&
+diff --git a/node_modules/vuepress-theme-vdoing/components/BloggerBar.vue b/node_modules/vuepress-theme-vdoing/components/BloggerBar.vue
+index 71ca215..38e3dda 100644
+--- a/node_modules/vuepress-theme-vdoing/components/BloggerBar.vue
++++ b/node_modules/vuepress-theme-vdoing/components/BloggerBar.vue
+@@ -1,7 +1,7 @@
+ <template>
+   <aside class="blogger-wrapper card-box">
+     <div class="avatar">
+-      <img :src="blogger.avatar" alt="头像" title="我好看吗" />
++      <img :src="blogger.avatar" alt="Avatar" title="Avatar" />
+     </div>
+     <div class="icons" v-if="social && social.icons && social.icons.length">
+       <a
+diff --git a/node_modules/vuepress-theme-vdoing/components/Buttons.vue b/node_modules/vuepress-theme-vdoing/components/Buttons.vue
+index abf239d..76f6378 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Buttons.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Buttons.vue
+@@ -2,20 +2,20 @@
+   <div class="buttons">
+     <transition name="fade">
+       <div
+-        title="返回顶部"
++        title="Back to top"
+         class="button blur go-to-top iconfont icon-fanhuidingbu"
+         v-show="showToTop"
+         @click="scrollToTop"
+       />
+     </transition>
+     <div
+-      title="去评论"
++      title="Go to comments"
+       class="button blur go-to-comment iconfont icon-pinglun"
+       v-show="showCommentBut"
+       @click="scrollToComment"
+     />
+     <div
+-      title="主题模式"
++      title="Theme mode"
+       class="button blur theme-mode-but iconfont icon-zhuti"
+       @mouseenter="showModeBox = true"
+       @mouseleave="showModeBox = false"
+@@ -60,22 +60,22 @@ export default {
+       showModeBox: false,
+       modeList: [
+         {
+-          name: '跟随系统',
++          name: 'Follow System',
+           icon: 'icon-zidong',
+           KEY: 'auto'
+         },
+         {
+-          name: '浅色模式',
++          name: 'Light Mode',
+           icon: 'icon-rijianmoshi',
+           KEY: 'light'
+         },
+         {
+-          name: '深色模式',
++          name: 'Dark Mode',
+           icon: 'icon-yejianmoshi',
+           KEY: 'dark'
+         },
+         {
+-          name: '阅读模式',
++          name: 'Reading Mode',
+           icon: 'icon-yuedu',
+           KEY: 'read'
+         }
+diff --git a/node_modules/vuepress-theme-vdoing/components/Catalogue.vue b/node_modules/vuepress-theme-vdoing/components/Catalogue.vue
+index 39dcb49..226f423 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Catalogue.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Catalogue.vue
+@@ -8,7 +8,7 @@
+       </dl>
+     </div>
+     <div class="catalogue-wrapper" v-if="isStructuring">
+-      <div class="catalogue-title">目录</div>
++      <div class="catalogue-title">Content</div>
+       <div class="catalogue-content">
+         <template v-for="(item, index) in getCatalogueList()">
+           <dl v-if="type(item) === 'array'" :key="index" class="inline">
+diff --git a/node_modules/vuepress-theme-vdoing/components/CategoriesBar.vue b/node_modules/vuepress-theme-vdoing/components/CategoriesBar.vue
+index b5a1bd5..7560eaa 100644
+--- a/node_modules/vuepress-theme-vdoing/components/CategoriesBar.vue
++++ b/node_modules/vuepress-theme-vdoing/components/CategoriesBar.vue
+@@ -3,8 +3,8 @@
+     <router-link
+       to="/categories/"
+       class="title iconfont icon-wenjianjia"
+-      title="全部分类"
+-      >{{ length === 'all' ? '全部分类' : '文章分类' }}</router-link
++      title="All Categories"
++      >{{ length === 'all' ? 'All Categories' : 'Categories' }}</router-link
+     >
+ 
+     <div class="categories">
+@@ -21,7 +21,7 @@
+         to="/categories/"
+         v-if="length !== 'all' && length < categoriesData.length"
+         class="more"
+-        >更多 ...</router-link
++        >More...</router-link
+       >
+     </div>
+   </div>
+diff --git a/node_modules/vuepress-theme-vdoing/components/Footer.vue b/node_modules/vuepress-theme-vdoing/components/Footer.vue
+index 1b5e5c0..6a6c382 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Footer.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Footer.vue
+@@ -16,7 +16,7 @@
+     <a
+       href="https://github.com/xugaoyi/vuepress-theme-vdoing"
+       target="_blank"
+-      title="本站主题"
++      title="Site theme"
+       >Vdoing</a
+     >
+     <template v-if="footer">
+diff --git a/node_modules/vuepress-theme-vdoing/components/PageEdit.vue b/node_modules/vuepress-theme-vdoing/components/PageEdit.vue
+index c9ac0ef..31855b7 100644
+--- a/node_modules/vuepress-theme-vdoing/components/PageEdit.vue
++++ b/node_modules/vuepress-theme-vdoing/components/PageEdit.vue
+@@ -12,7 +12,7 @@
+         :to="`/tags/?tag=${encodeURIComponent(item)}`"
+         v-for="(item, index) in tags"
+         :key="index"
+-        title="标签"
++        title="Tags"
+         >#{{ item }}</router-link
+       >
+     </div>
+diff --git a/node_modules/vuepress-theme-vdoing/components/Pagination.vue b/node_modules/vuepress-theme-vdoing/components/Pagination.vue
+index 0a65cd0..3f8f24b 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Pagination.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Pagination.vue
+@@ -5,7 +5,7 @@
+       :class="{ disabled: currentPage === 1 }"
+       @click="goPrex()"
+     >
+-      <p>上一页</p>
++      <p>Previous</p>
+     </span>
+ 
+     <!-- 分页在5页及以下时 -->
+@@ -34,7 +34,7 @@
+         class="ellipsis ell-two"
+         v-show="currentPage > 3"
+         @click="goIndex(currentPage - 2)"
+-        title="上两页"
++        title="Back two pages"
+       />
+       <!--这里没有使用v-if的原因是因为部署版本在当前页大于3时刷新页面出现了一些bug-->
+       <span
+@@ -58,7 +58,7 @@
+         class="ellipsis ell-four"
+         v-show="currentPage < pages - 2"
+         @click="goIndex(currentPage + 2)"
+-        title="下两页"
++        title="Forward two pages"
+       />
+       <span
+         class="card-box"
+@@ -82,7 +82,7 @@
+       :class="{ disabled: currentPage === pages }"
+       @click="goNext()"
+     >
+-      <p>下一页</p>
++      <p>Next</p>
+     </span>
+   </div>
+ </template>
+diff --git a/node_modules/vuepress-theme-vdoing/components/PostList.vue b/node_modules/vuepress-theme-vdoing/components/PostList.vue
+index 6b32f95..1ef40ad 100644
+--- a/node_modules/vuepress-theme-vdoing/components/PostList.vue
++++ b/node_modules/vuepress-theme-vdoing/components/PostList.vue
+@@ -18,7 +18,7 @@
+           </h2>
+           <div class="article-info">
+             <a
+-              title="作者"
++              title="Author"
+               class="iconfont icon-touxiang"
+               target="_blank"
+               v-if="item.author && item.author.href"
+@@ -26,20 +26,20 @@
+               >{{ item.author.name ? item.author.name : item.author }}</a
+             >
+             <span
+-              title="作者"
++              title="Author"
+               class="iconfont icon-touxiang"
+               v-else-if="item.author"
+               >{{ item.author.name ? item.author.name : item.author }}</span
+             >
+ 
+             <span
+-              title="创建时间"
++              title="Created"
+               class="iconfont icon-riqi"
+               v-if="item.frontmatter.date"
+               >{{ item.frontmatter.date.split(' ')[0] }}</span
+             >
+             <span
+-              title="分类"
++              title="Category"
+               class="iconfont icon-wenjian"
+               v-if="
+                 $themeConfig.category !== false && item.frontmatter.categories
+@@ -53,7 +53,7 @@
+               >
+             </span>
+             <span
+-              title="标签"
++              title="Tags"
+               class="iconfont icon-biaoqian tags"
+               v-if="
+                 $themeConfig.tag !== false &&
+@@ -75,7 +75,7 @@
+           <router-link
+             :to="item.path"
+             class="readmore iconfont icon-jiantou-you"
+-            >阅读全文</router-link
++            >Read More</router-link
+           >
+         </div>
+       </div>
+diff --git a/node_modules/vuepress-theme-vdoing/components/RightMenu.vue b/node_modules/vuepress-theme-vdoing/components/RightMenu.vue
+index 09b2b68..9378766 100644
+--- a/node_modules/vuepress-theme-vdoing/components/RightMenu.vue
++++ b/node_modules/vuepress-theme-vdoing/components/RightMenu.vue
+@@ -1,7 +1,7 @@
+ <template>
+   <div class="right-menu-wrapper">
+     <div class="right-menu-margin">
+-      <div class="right-menu-title">目录</div>
++      <div class="right-menu-title">Content</div>
+       <div class="right-menu-content">
+         <div
+           :class="[
+diff --git a/node_modules/vuepress-theme-vdoing/components/SidebarButton.vue b/node_modules/vuepress-theme-vdoing/components/SidebarButton.vue
+index 706adf1..c670e26 100644
+--- a/node_modules/vuepress-theme-vdoing/components/SidebarButton.vue
++++ b/node_modules/vuepress-theme-vdoing/components/SidebarButton.vue
+@@ -2,7 +2,7 @@
+   <div
+     class="sidebar-button"
+     @click="$emit('toggle-sidebar')"
+-    title="目录"
++    title="Content"
+   >
+     <svg
+       class="icon"
+diff --git a/node_modules/vuepress-theme-vdoing/components/TagsBar.vue b/node_modules/vuepress-theme-vdoing/components/TagsBar.vue
+index 9f4072d..e4822cb 100644
+--- a/node_modules/vuepress-theme-vdoing/components/TagsBar.vue
++++ b/node_modules/vuepress-theme-vdoing/components/TagsBar.vue
+@@ -3,8 +3,8 @@
+     <router-link
+       to="/tags/"
+       class="title iconfont icon-biaoqian1"
+-      title="全部标签"
+-    >{{ length === 'all' ? '全部标签' : '热门标签' }}</router-link>
++      title="All Tags"
++    >{{ length === 'all' ? 'All Tags' : 'Tags' }}</router-link>
+     <div class="tags">
+       <template v-for="(item, index) in tags">
+         <router-link
+@@ -18,7 +18,7 @@
+       <router-link
+         to="/tags/"
+         v-if="length !== 'all' && tagsData.length > length"
+-      >更多...</router-link>
++      >More...</router-link>
+     </div>
+   </div>
+ </template>
+diff --git a/node_modules/vuepress-theme-vdoing/components/UpdateArticle.vue b/node_modules/vuepress-theme-vdoing/components/UpdateArticle.vue
+index ae0270f..ea0c29a 100644
+--- a/node_modules/vuepress-theme-vdoing/components/UpdateArticle.vue
++++ b/node_modules/vuepress-theme-vdoing/components/UpdateArticle.vue
+@@ -2,7 +2,7 @@
+   <div :class="['article-list', { 'no-article-list': isShowArticle }]">
+     <div class="article-title">
+       <router-link :to="moreArticle || '/archives/'" class="iconfont icon-bi"
+-        >最近更新</router-link
++        >Recently Updated</router-link
+       >
+     </div>
+     <div class="article-wrapper">
+@@ -25,7 +25,7 @@
+         <dd></dd>
+         <dt>
+           <router-link :to="moreArticle || '/archives/'" class="more"
+-            >更多文章></router-link
++            >More articles</router-link
+           >
+         </dt>
+       </dl>
+diff --git a/node_modules/vuepress-theme-vdoing/layouts/404.vue b/node_modules/vuepress-theme-vdoing/layouts/404.vue
+index c8b7672..4a36a01 100644
+--- a/node_modules/vuepress-theme-vdoing/layouts/404.vue
++++ b/node_modules/vuepress-theme-vdoing/layouts/404.vue
+@@ -3,17 +3,17 @@
+     <div class="theme-vdoing-content">
+       <span>404</span>
+       <blockquote>{{ getMsg() }}</blockquote>
+-      <router-link to="/">返回首页</router-link>
++      <router-link to="/">Back to home</router-link>
+     </div>
+   </div>
+ </template>
+ 
+ <script>
+ const msgs = [
+-  `这里什么都没有。`,
+-  `我是谁？我在哪？`,
+-  `这是一个Four-Oh-Four.`,
+-  `看来我们的链接坏掉了~`
++  `There is nothing here.`,
++  `Who am I? Where am I?`,
++  `This is a Four-Oh-Four.`,
++  `Looks like this link is broken~`
+ ]
+ 
+ export default {

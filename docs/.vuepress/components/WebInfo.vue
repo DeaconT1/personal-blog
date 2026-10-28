@@ -16,7 +16,7 @@
     <div class="webinfo-item">
       <div class="webinfo-item-title">Running time：</div>
       <div class="webinfo-content">
-        {{ createToNowDay != 0 ? createToNowDay + " days" : "不到一天" }}
+        {{ createToNowDay != 0 ? createToNowDay + " days" : "Less than a day" }}
       </div>
     </div>
 
@@ -28,7 +28,7 @@
     <div class="webinfo-item">
       <div class="webinfo-item-title">Last Update：</div>
       <div class="webinfo-content">
-        {{ lastActiveDate == "刚刚" ? "刚刚" : lastActiveDate + "" }}
+        {{ lastActiveDate == "just now" ? "just now" : lastActiveDate + "" }}
       </div>
     </div>
 
@@ -36,7 +36,7 @@
       <div class="webinfo-item-title">Visits：</div>
       <div class="webinfo-content">
         <span id="busuanzi_value_site_pv" class="web-site-pv"
-        ><i title="正在获取..." class="loading iconfont icon-loading"></i>
+        ><i title="Loading..." class="loading iconfont icon-loading"></i>
         </span>
         times
       </div>
@@ -98,7 +98,7 @@ export default {
       } else if (totalWords == "archives") {
         this.totalWords = 0;
         console.log(
-            "如果 totalWords = 'archives'，必须传入 eachFileWords，显然您并没有传入！"
+            "When totalWords = 'archives', eachFileWords must be provided, but it was not passed in!"
         );
       } else {
         this.totalWords = totalWords;
